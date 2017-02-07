@@ -5,5 +5,15 @@ FactoryGirl.define do
     sequence(:active) { [true, false].sample }
 
     association :company
+
+    trait :active do
+      active true
+
+      association :company, active: true
+    end
+
+    trait :disable do
+      active false
+    end
   end
 end
