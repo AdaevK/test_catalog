@@ -1,24 +1,33 @@
-# README
+[![Build Status](https://travis-ci.org/AdaevK/test_catalog.svg?branch=master)](https://travis-ci.org/AdaevK/test_catalog)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# SETUP
+Установить ruby 2.3.3, postgresql 9.4
 
-Things you may want to cover:
+Перейти в каталог приложения
 
-* Ruby version
+```console
+$ cp .env.example .env.development
+$ cp .env.example .env.test
+```
+Заполнить файлы .env.development и .env.test
 
-* System dependencies
+```console
+$ gem install bundler
+$ bundle install
+$ rails db:create
+$ rails db:migrate
+$ rails db:seed
+```
 
-* Configuration
+# START
 
-* Database creation
+```console
+$ bundle exec rails s
+```
 
-* Database initialization
+# TEST
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```console
+$ bundle exec rspec
+$ bundle exec rspec spec/features/products_index_spec.rb
+```
