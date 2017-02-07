@@ -1,2 +1,17 @@
-h1 Products#index
-p Find me in app/views/products/index.html.slim
+.row
+  .col-md-12
+    h3.text-center Оборудование для киосков
+    form.form-horizontal role="form"
+      .form-group
+        .col-sm-6.col-sm-offset-2
+          input.form-control type='text'
+        .col-sm-4
+          button.btn.btn-default type="submit" Найти
+.row
+  - @products.each do |product|
+    .col-md-3
+      h2= product.name
+      p= product.description
+      p
+        a.btn href='#'
+          strong= product.company.name

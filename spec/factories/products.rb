@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :product do
-    sequence(:name) { Faker::Lorem.sentence }
+    sequence(:name) { Faker::Lorem.words(3) }
     sequence(:description) { Faker::Lorem.paragraph(5) }
     sequence(:active) { [true, false].sample }
 
