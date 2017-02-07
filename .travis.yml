@@ -6,7 +6,7 @@ services:
 before_script:
 - psql -U postgres -c 'create user defo;'
 - psql -U postgres -c 'create database testcatalog_test with owner defo;'
-- cp .env.yml.travis .env.yml
+- cp .env.yml.travis .env.test
 - bundle exec rails db:migrate RAILS_ENV=test
 script:
 - bundle exec rspec
