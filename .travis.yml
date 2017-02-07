@@ -19,4 +19,4 @@ deploy:
   on:
     repo: AdaevK/test_catalog
   run:
-  - rails db:seed
+  - rails db:migrate
